@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Button = styled.button`
   position: relative;
+  padding-bottom: 4px;
   width: ${props => props.width || '15rem'};
   height: ${props => props.height || '3.5rem'};
   color: #fff;
@@ -34,6 +35,19 @@ const Button = styled.button`
   }
 `;
 
-export default function Btn({ content }) {
-  return <Button>{content}</Button>
+export default function Btn({
+  content,
+  fontSize,
+  width,
+  height
+}) {
+  return (
+    <Button
+      fontSize={fontSize}
+      width={width}
+      height={height}
+    >
+      {content}
+    </Button>
+  );
 }
