@@ -25,8 +25,18 @@ export default function About() {
   const query = data.kittendata.abouts[0];
   
   return (
-    <section>
-      
-    </section>
+    <S.Container image={query.sideimg.url}>
+      <S.Content>
+        <S.Title>{query.title}</S.Title>
+        <S.About>{query.about}</S.About>
+        <S.List>
+          <S.Text>{query.line1}</S.Text>
+          <S.Text>{query.line2}</S.Text>
+          <S.Text>{query.line3}</S.Text>
+          <S.Text>{query.line4}</S.Text>
+        </S.List>
+      </S.Content>
+      <S.Gradient />
+    </S.Container>
   );
 }
