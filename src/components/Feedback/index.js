@@ -21,8 +21,18 @@ export default function Feedback() {
   const query = data.kittendata.feedbacks[0];
 
   return (
-    <section>
-      
-    </section>
+    <S.Container>
+      <S.Title>{query.title}</S.Title>
+      <S.Wrapper>
+        <S.Video>
+          <iframe width="100%" height="100%" src={query.video1} frameborder="0"></iframe>
+          <S.Description>{query.customer1}</S.Description>
+        </S.Video>
+        <S.Video>
+          <iframe width="100%" height="100%" src={query.video2} frameborder="0"></iframe>
+          <S.Description>{query.customer2}</S.Description>
+        </S.Video>
+      </S.Wrapper>
+    </S.Container>
   );
 }
