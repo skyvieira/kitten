@@ -3,8 +3,15 @@ import styled from "styled-components";
 import bounce from "../Animations/bounce";
 
 export const Row = styled.div`
-  box-shadow: 0 3px 5px #333;
-  background: #2d0e30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-shadow: ${props => props.showMenu ? '0 0 20px #111' : 'none'};
+  background: ${props => props.showMenu ? '#2e2f34' : 'none'};
+  transform: ${props => props.hiddenMenu ? 'translateY(-100%)' : 'translateY(0)'};
+  transition: .4s;
+  z-index: 1;
 `;
 
 export const Wrapper = styled.div`
@@ -12,7 +19,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  width: 80%;
+  width: 75%;
   height: 5rem;
 `;
 
@@ -27,7 +34,7 @@ export const Link = styled.a`
   color: #fdfdfd;
   text-decoration: none;
   text-transform: uppercase;
-  font: 600 .9em "Malgun Gothic", sans-serif;
+  font: 600 .85em "Malgun Gothic", sans-serif;
   user-select: none;
 
   &:after {

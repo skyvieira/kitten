@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  padding-bottom: 20vh;
+  padding-bottom: 10vh;
   width: 90%;
   height: 100vh;
   color: #fff;

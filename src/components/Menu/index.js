@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import * as S from "./styles";
@@ -27,8 +27,35 @@ export default function Menu() {
 
   const query = data.kittendata.menus[0];
 
+  const [scroll, setScroll] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    setScrollPosition(window.pageYOffset);
+
+    if (window.pageYOffset > 0) {
+      if (scrollPosition > window.pageYOffset) {
+        setScroll('up');
+      } else {
+        setScroll('down');
+      }
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollPosition]);
+
   return (
-    <S.Row>
+    <S.Row
+      showMenu={scroll === 'up'}
+      hiddenMenu={scroll === 'down'}
+    >
       <S.Wrapper>
         <S.Logo
           src={query.logo.url}
