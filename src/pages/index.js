@@ -18,7 +18,7 @@ export default function Index() {
         <About />
         <Feedback />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -1,12 +1,6 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-export const bounce = keyframes`
-  40% {
-    left: 42.5%;
-    width: 8px;
-    opacity: 1;
-  }
-`;
+import bounce from "../Animations/bounce";
 
 export const Row = styled.div`
   box-shadow: 0 3px 5px #333;
