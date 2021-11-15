@@ -11,11 +11,12 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   padding: 5rem 0;
-  width: 80%;
+  width: 75%;
 `;
 
 export const Logo = styled.img`
-  max-width: 200px;
+  align-self: center;
+  max-height: 80px;
 `;
 
 export const Info = styled.section`
@@ -62,7 +63,7 @@ export const Link = styled.a`
 export const Copyright = styled.p`
   margin: auto;
   padding: 1.2rem 0 1.15rem;
-  width: 80%;
+  width: 75%;
   color: #fff;
   font: 300 .9em "Malgun Gothic", sans-serif;
 `;
