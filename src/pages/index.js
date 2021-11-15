@@ -14,11 +14,11 @@ export default function Index() {
 
       <Header />
       <main>
-        {/* <Services /> */}
-        {/* <About /> */}
-        {/* <Feedback /> */}
+        <Services />
+        <About />
+        <Feedback />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
