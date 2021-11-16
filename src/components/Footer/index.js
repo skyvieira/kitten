@@ -113,7 +113,7 @@ export default function Footer() {
   };
   
   return (
-    <S.Container>
+    <S.Container id="contact">
       <S.Wrapper>
         <S.Logo src={query.logo.url} alt="Logo" />
 
