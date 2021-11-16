@@ -35,7 +35,7 @@ export default function Index() {
       <GlobalStyle />
       <Header />
       <main>
-        <Services/>
+        <Services />
         <About />
         <Feedback />
       </main>
