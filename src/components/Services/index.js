@@ -53,7 +53,7 @@ export default function Services() {
   ];
 
   return (
-    <S.Wrapper>
+    <S.Wrapper id="services">
       {content.map((item, i) => (
         <S.Category key={i}>
           <S.Image src={item.img} alt="" />
