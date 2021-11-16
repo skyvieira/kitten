@@ -25,7 +25,7 @@ export default function About() {
   const query = data.kittendata.abouts[0];
   
   return (
-    <S.Container image={query.sideimg.url}>
+    <S.Container id="about" image={query.sideimg.url} >
       <S.Content>
         <S.Title>{query.title}</S.Title>
         <S.About>{query.about}</S.About>
