@@ -25,7 +25,7 @@ export default function Header() {
   const query = data.kittendata.headers[0];
 
   return (
-    <S.Container background={query.background.url}>
+    <S.Container id="home" background={query.background.url}>
       <Menu />
       <S.Wrapper>
         <S.Title>{query.title}</S.Title>

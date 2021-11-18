@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
-import bounce from "../Animations/bounce";
+import boucingBubble from "../Hover/boucingBubble";
 
 export const Row = styled.div`
   position: fixed;
@@ -29,7 +30,7 @@ export const Mavigation = styled.nav`
   width: 65%;
 `;
 
-export const Link = styled.a`
+export const Link = styled(AnchorLink)`
   position: relative;
   color: #fdfdfd;
   text-decoration: none;
@@ -37,22 +38,10 @@ export const Link = styled.a`
   font: 600 .85em "Malgun Gothic", sans-serif;
   user-select: none;
 
+  ${boucingBubble}
   &:after {
-    position: absolute;
     bottom: -.5rem;
     left: 44%;
-    content: '';
-    background: #fff;
-    border-radius: 50%;
-    width: 5px;
-    height: 0;
-    transition: .1s;
-    opacity: .9;
-  }
-
-  &:hover :after {
-    height: 5px;
-    animation: ${bounce} .8s cubic-bezier(0.45, 0.05, 0.55, 0.95) .5s infinite;
   }
 `;
 
@@ -73,7 +62,7 @@ export const Telephone = styled.p`
   font: 600 .85em "Malgun Gothic", sans-serif;
 
   &:before {
-    content: url(${props => props.phoneImg});
+    content: url(${props => props.icon});
     position: absolute;
     left: -1.7rem;
     transform: scale(.9);

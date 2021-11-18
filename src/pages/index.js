@@ -29,7 +29,6 @@ export default function Index() {
       <Helmet>
         <link rel="shortcut icon" href={icon} type="image/x-icon" />
         <title>Kitten House</title>
-        <html style='scroll-behavior: smooth'/>
       </Helmet>
 
       <GlobalStyle />

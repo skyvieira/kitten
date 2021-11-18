@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import * as S from "./styles";
 
@@ -69,23 +70,23 @@ export default function Footer() {
       informations: [
         {
           text: query.home,
-          link: `#${query.home.toLowerCase()}`
+          link: '/#home'
         },
         {
           text: query.about,
-          link: `#${query.about.toLowerCase()}`
+          link: '/#about'
         },
         {
           text: query.service,
-          link: `#${query.service.toLowerCase()}`
+          link: '/#services'
         },
         {
           text: query.reservation,
-          link: `#${query.reservation.toLowerCase()}`
+          link: '/#home'
         },
         {
           text: query.contact,
-          link: `#${query.contact.toLowerCase()}`
+          link: '/#contact'
         }
       ]
     },
@@ -130,7 +131,7 @@ export default function Footer() {
             <ul>
               {content.links.informations.map((info, i) => (
                 <S.Text key={i}>
-                  <S.Link href={info.link}>{info.text}</S.Link>
+                  <S.AnchorLink to={info.link} title={info.text} />
                 </S.Text>
               ))}
             </ul>
@@ -147,12 +148,12 @@ export default function Footer() {
         </S.Info>
       </S.Wrapper>
       
-      <div style={{background: '#2e2f34'}}>
-        <S.Copyright>{query.rights}</S.Copyright>
-      </div>
-      <div style={{background: '#222326'}}>
-        <S.Reference>{query.reference}</S.Reference>
-      </div>
+      <S.Copyright>
+        <p>{query.rights}</p>
+      </S.Copyright>
+      <S.Reference>
+        <p>{query.reference}</p>
+      </S.Reference>
     </S.Container>
   );
 }
