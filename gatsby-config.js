@@ -6,6 +6,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+        duration: 600
+      }
+    },
+    {
       resolve: "gatsby-source-graphql",
       options: {
         typeName: "kittendata",
