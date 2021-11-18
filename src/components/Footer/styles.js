@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { AnchorLink as GatsbyLink } from "gatsby-plugin-anchor-links";
 
-import bounce from "../Animations/bounce";
+import boucingBubble from "../Hover/boucingBubble";
 
 export const Container = styled.footer`
   background: #3c4049;
@@ -36,41 +37,44 @@ export const Text = styled.li`
   font: 300 .9em/1.6 "Malgun Gothic", sans-serif;
 `;
 
+export const AnchorLink = styled(GatsbyLink)`
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+
+  ${boucingBubble}
+  &:after {
+    top: 45%; left: -.8rem;
+  }
+`;
+
 export const Link = styled.a`
   position: relative;
   color: #fff;
   text-decoration: none;
 
+  ${boucingBubble}
   &:after {
-    position: absolute;
-    top: 45%;
-    left: -.8rem;
-    content: '';
-    background: #fff;
-    border-radius: 50%;
-    width: 5px;
-    height: 0;
-    transition: .1s;
-    opacity: .9;
-  }
-
-  &:hover :after {
-    height: 5px;
-    animation: ${bounce} .8s cubic-bezier(0.45, 0.05, 0.55, 0.95) .5s infinite;
+    top: 45%; left: -.8rem;
   }
 `;
 
-export const Copyright = styled.p`
-  margin: auto;
+export const Copyright = styled.div`
   padding: 1.2rem 0 1.15rem;
-  width: 75%;
   color: #fff;
   font: 300 .9em "Malgun Gothic", sans-serif;
+  background: #2e2f34;
+
+  p {
+    margin: auto;
+    width: 75%;
+  }
 `;
 
-export const Reference = styled.p`
+export const Reference = styled.div`
   padding: 1rem 0 .9rem;
   color: #707070;
   text-align: center;
   font: 400 .7em "Malgun Gothic", sans-serif;
+  background: #222326;
 `;
